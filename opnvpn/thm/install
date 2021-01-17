@@ -1,0 +1,2 @@
+#! /bin/bash
+echo -e export PATH=~/dotfiles/opnvpn/thm:\$PATH >> ~/.zshrc
