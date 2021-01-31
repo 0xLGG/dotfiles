@@ -207,6 +207,7 @@ alias ls="lsd"
 alias ip="ip -c=always"
 alias xclip="xclip -sel clip"
 
+alias scan='if ! [ -d ./nmap ]; then mkdir nmap; echo "**** Directory to save nmap scan created (nmap)****";echo "Starting scan with sudo nmap -sC -sS -sV -oA nmap/inital -vv"; fi;sudo nmap -sC -sS -sV -oA nmap/inital -vv'
 alias getip='ip a | grep tun0 | grep "inet .*/" | grep -oP "(\d+\.){3}\d+" | xclip'
 
 # enable auto-suggestions based on the history
