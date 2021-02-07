@@ -188,6 +188,11 @@ alias l='ls -CF'
 # mine
 alias pserv='sudo python3 -m http.server 80'
 alias t-pserv='cd ~/repos && pserv'
+alias cht='curl cht.sh/'
+wthr() { curl wttr.in/"$1" }
+EDITOR=vim
+
+# setxkbmap -option ctrl:swapcaps # for tmux shortcut
 
 # from rwxrob
 alias ducks='du -sh * | sort -hr | head -11' # 🦆
@@ -216,6 +221,8 @@ if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
     # change suggestion color
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#999'
 fi
+
 export PATH=/home/kali/dotfiles/opnvpn/thm:$PATH
 export PATH=/home/kali/repos/dotfiles/rwxrob/common/lynx:$PATH
 export PATH=/home/kali/dotfiles/scripts:$PATH
+
