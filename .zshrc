@@ -191,7 +191,7 @@ alias t-pserv='cd ~/repos && pserv'
 alias cht='curl cht.sh/'
 wthr() { curl wttr.in/"$1" }
 EDITOR=vim
-
+xset b off # turn off beeps https://unix.stackexchange.com/questions/214607/how-to-disable-beep-tone-in-xfce-when-the-delete-button-is-pressed
 # setxkbmap -option ctrl:swapcaps # for tmux shortcut
 
 # from rwxrob
