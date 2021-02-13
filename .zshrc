@@ -212,6 +212,12 @@ alias ls="lsd"
 alias ip="ip -c=always"
 alias xclip="xclip -sel clip"
 
+## save victim IP for CTF
+VIP() { echo "$1" > /tmp/vip; export VIP=$(cat /tmp/vip);}
+if [ -f /tmp/vip ]; then
+	  export VIP=$(cat /tmp/vip);
+fi 
+
 alias scan='if ! [ -d ./nmap ]; then mkdir nmap; echo "**** Directory to save nmap scan created (nmap)****";echo "Starting scan with sudo nmap -sC -sS -sV -oA nmap/inital -vv"; fi;sudo nmap -sC -sS -sV -oA nmap/inital -vv'
 alias getip='ip a | grep tun0 | grep "inet .*/" | grep -oP "(\d+\.){3}\d+" | xclip'
 
