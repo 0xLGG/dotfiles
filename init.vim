@@ -7,7 +7,7 @@ set shiftwidth=4
 set expandtab
 set smartindent
 
-# i forgot what that one does... how wants to fix this?
+" i forgot what that one does... how wants to fix this?
 set exrc
 
 " thick cursor... always
