@@ -36,7 +36,7 @@ colorscheme ayu
 " defining the leader key, here space
 let mapleader = " "
 " n -> the mode here normal
-" nore -> if not here can executre more commands?
+" nore -> not recursive to end of line 
 " pv just an arbitrary name here for project-view
 nnoremap <leader>pv :Vex<CR>
 " source file
@@ -45,4 +45,10 @@ nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
 nnoremap <C-p> :GFiles<CR>
 " when not in a git repo for fzf finder
 nnoremap <leader>pf :Files<CR>
-nnoremap <C-j> :cnext<CR>
+" from the primeagen. An example with quickfixlists
+" they can be created by let's say :grep verb .
+" I don't know if I love these remaps yet.  I am considering doing
+" <leader>c(k|j|o)
+nnoremap <C-k> :cnext<CR>
+nnoremap <C-j> :cprev<CR>
+nnoremap <C-E> :copen<CR>
