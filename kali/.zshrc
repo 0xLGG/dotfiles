@@ -189,10 +189,23 @@ alias l='ls -CF'
 alias pserv='sudo python3 -m http.server 80'
 alias t-pserv='cd ~/repos && pserv'
 alias cht='curl cht.sh/'
+alias vim=nvim
+alias vm=nvim
 wthr() { curl wttr.in/"$1" }
 EDITOR=vim
 xset b off # turn off beeps https://unix.stackexchange.com/questions/214607/how-to-disable-beep-tone-in-xfce-when-the-delete-button-is-pressed
 # setxkbmap -option ctrl:swapcaps # for tmux shortcut
+
+DISP() {
+    xrandr --newmode "3440x1440_60.00"  419.11  3440 3688 4064 4688  1440 1441 1444 1490  -HSync +Vsync
+    xrandr --addmode Virtual1 "3440x1440_60.00" # instead of Virtual1 see what displays are displayed in xrandr -q
+    xrandr --output Virtual1 --mode "3440x1440_60.00"
+}
+
+VPN_THM() {
+    sudo killall opnvpn
+    opnvpn-thm
+}
 
 # from rwxrob
 alias ducks='du -sh * | sort -hr | head -11' # 🦆
@@ -218,7 +231,8 @@ if [ -f /tmp/vip ]; then
 	  export VIP=$(cat /tmp/vip);
 fi 
 
-alias scan='if ! [ -d ./nmap ]; then mkdir nmap; echo "**** Directory to save nmap scan created (nmap)****";echo "Starting scan with sudo nmap -sC -sS -sV -oA nmap/inital -vv"; fi;sudo nmap -sC -sS -sV -oA nmap/inital -vv'
+
+alias scan='if ! [ -d ./nmap ]; then mkdir nmap; echo "**** Directory to save nmap scan created (nmap)****";echo "Starting scan with sudo nmap -p- -sC -sS -sV -oA nmap/inital -vv"; fi;sudo nmap -p- -sC -sS -sV -oA nmap/inital -vv'
 alias getip='ip a | grep tun0 | grep "inet .*/" | grep -oP "(\d+\.){3}\d+" | xclip'
 
 # enable auto-suggestions based on the history
@@ -231,4 +245,9 @@ fi
 export PATH=/home/kali/dotfiles/opnvpn/thm:$PATH
 export PATH=/home/kali/repos/dotfiles/rwxrob/common/lynx:$PATH
 export PATH=/home/kali/dotfiles/scripts:$PATH
+
+# enable command-not-found if installed
+if [ -f /etc/zsh_command_not_found ]; then
+	. /etc/zsh_command_not_found
+fi
 
