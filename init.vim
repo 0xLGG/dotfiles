@@ -24,6 +24,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'ayu-theme/ayu-vim'
+Plug 'ollykel/v-vim'
 call plug#end()
 
 " a very awesome looking theme! 
@@ -33,6 +34,12 @@ set termguicolors
 let ayucolor="dark"
 colorscheme ayu
 
+" V LANG
+" https://github.com/ollykel/v-vim
+" Enable automatically formatting file via "v fmt -" before writing buffer.
+let g:v_autofmt_bufwritepre = 1
+
+" REMAP REMAPS START HERE
 " defining the leader key, here space
 let mapleader = " "
 " n -> the mode here normal
