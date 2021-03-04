@@ -58,7 +58,8 @@ if ! zgen saved; then
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load zsh-users/zsh-completions src
   zgen load zsh-users/zsh-autosuggestions
-  
+  zgen load zsh-users/zsh-history-substring-search
+
   zgen oh-my-zsh themes/arrow
   # zgen oh-my-zsh themes/agnoster
 
@@ -72,3 +73,6 @@ alias vi=nvim
 # for tmux
 export TERM=xterm-256color
 export EDITOR=vim
+
+# at the end enter our home
+cd ~
