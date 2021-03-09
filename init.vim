@@ -1,6 +1,11 @@
 " prevents us from having to use zz and starts to scroll with an offset of 8
 set scrolloff=8
 
+" jump to closing bracket when inserting one
+" https://vim.fandom.com/wiki/Moving_to_matching_braces#:~:text=To%20jump%20to%20a%20matching,%2C%20%23elif%20%2C%20%23endif%20.
+set showmatch
+set matchtime=3
+
 " fix those weird spacings
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -28,6 +33,7 @@ Plug 'ayu-theme/ayu-vim'
 
 Plug 'ollykel/v-vim'
 
+" telescope stuff
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -56,10 +62,13 @@ let mapleader = " "
 nnoremap <leader>pv :Vex<CR>
 " source file
 nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
+
+" fzf config
 " fuzzy finder in git repo
 nnoremap <C-p> :GFiles<CR>
 " when not in a git repo for fzf finder
 nnoremap <leader>pf :Files<CR>
+
 " from the primeagen. An example with quickfixlists
 " they can be created by let's say :grep verb .
 " I don't know if I love these remaps yet.  I am considering doing
