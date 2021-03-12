@@ -25,19 +25,22 @@ set visualbell
 set relativenumber
 set number
 
+" fuzzyfinder
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+" my theme ... maybe I will try gruvebox at some point
 Plug 'ayu-theme/ayu-vim'
-
-Plug 'ollykel/v-vim'
 
 " telescope stuff
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
+
+" language plugins
+Plug 'ollykel/v-vim'
 
 call plug#end()
 
