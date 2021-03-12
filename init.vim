@@ -25,8 +25,8 @@ set visualbell
 set relativenumber
 set number
 
-" fuzzyfinder
 call plug#begin('~/.vim/plugged')
+" fuzzyfinder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
@@ -39,7 +39,6 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
-" language plugins
 Plug 'ollykel/v-vim'
 
 call plug#end()
