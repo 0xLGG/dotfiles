@@ -78,6 +78,11 @@ nnoremap <C-p> :GFiles<CR>
 " when not in a git repo for fzf finder
 nnoremap <leader>pf :Files<CR>
 
+" Git config
+nnoremap <leader>gs :G<CR>
+nnoremap <leader>gf :diffget //3<CR>
+nnoremap <leader>gj :diffget //2<CR>
+
 " from the primeagen. An example with quickfixlists
 " they can be created by let's say :grep verb .
 " I don't know if I love these remaps yet.  I am considering doing
@@ -91,4 +96,4 @@ nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
-
+" REMAP REMAPS ENDS HERE
