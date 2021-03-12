@@ -30,6 +30,12 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+" git stuff shamless copied from this vid
+" https://www.youtube.com/watch?v=PO6DxfGPQvw&t=317s
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+
 " my theme ... maybe I will try gruvebox at some point
 Plug 'ayu-theme/ayu-vim'
 
@@ -39,6 +45,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
+" language specific stuff
 Plug 'ollykel/v-vim'
 
 call plug#end()
