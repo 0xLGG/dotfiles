@@ -62,6 +62,10 @@ colorscheme ayu
 " Enable automatically formatting file via "v fmt -" before writing buffer.
 let g:v_autofmt_bufwritepre = 1
 
+" airline (git stuff theme)
+let g:airline_theme='dark'
+let g:airline_powerline_fonts = 1
+
 " REMAP REMAPS START HERE
 " defining the leader key, here space
 let mapleader = " "
