@@ -25,6 +25,9 @@ set visualbell
 set relativenumber
 set number
 
+" will make a buffer modifiable
+set modifiable
+
 call plug#begin('~/.vim/plugged')
 " fuzzyfinder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
