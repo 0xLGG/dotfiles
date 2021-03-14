@@ -28,6 +28,9 @@ set number
 " will make a buffer modifiable
 set modifiable
 
+" some people like Vim to always change to the current file's directory
+set autochdir
+
 call plug#begin('~/.vim/plugged')
 " fuzzyfinder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -50,6 +53,9 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 " language specific stuff
 Plug 'ollykel/v-vim'
+
+" LSP stuff
+Plug 'neovim/nvim-lspconfig'
 
 call plug#end()
 
