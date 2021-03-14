@@ -54,6 +54,10 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 " language specific stuff
 Plug 'ollykel/v-vim'
 
+" Conqueror of Completion (the CoC stuff)
+" use release branch (recommend)
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " LSP stuff
 Plug 'neovim/nvim-lspconfig'
 
@@ -110,3 +114,4 @@ nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 " REMAP REMAPS ENDS HERE
+
