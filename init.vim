@@ -29,7 +29,7 @@ set number
 set modifiable
 
 " some people like Vim to always change to the current file's directory
-set autochdir
+" set autochdir
 
 call plug#begin('~/.vim/plugged')
 " fuzzyfinder
@@ -91,6 +91,10 @@ let mapleader = " "
 nnoremap <leader>pv :Vex<CR>
 " source file
 nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
+
+" coc CoC config
+nnoremap <leader>gd <Plug>(coc-definition)
+nnoremap <leader>gr <Plug>(coc-references)
 
 " fzf config
 " fuzzy finder in git repo
