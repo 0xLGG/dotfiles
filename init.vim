@@ -42,8 +42,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline'
 
-" my theme ... maybe I will try gruvebox at some point
-Plug 'ayu-theme/ayu-vim'
+" my theme ... maybe I will try gruvbox at some point
+" Plug 'ayu-theme/ayu-vim'
+" ok let us actually tryouot gruvbox this time
+Plug 'morhetz/gruvbox'
 
 " telescope stuff
 Plug 'nvim-lua/popup.nvim'
@@ -67,8 +69,9 @@ call plug#end()
 " might be a little to dark on the relative numbers and such 
 " but already 100 times better then defaults
 set termguicolors
-let ayucolor="dark"
-colorscheme ayu
+" let ayucolor="dark"
+" colorscheme ayu
+colorscheme gruvbox
 
 " V LANG
 " https://github.com/ollykel/v-vim
