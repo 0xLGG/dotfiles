@@ -59,6 +59,8 @@ Plug 'ollykel/v-vim'
 " Conqueror of Completion (the CoC stuff)
 " use release branch (recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Syntax highlighting for CJSON in Vim
+Plug 'neoclide/jsonc.vim'
 
 " LSP stuff
 Plug 'neovim/nvim-lspconfig'
