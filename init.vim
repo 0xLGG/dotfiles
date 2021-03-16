@@ -92,9 +92,9 @@ nnoremap <leader>pv :Vex<CR>
 " source file
 nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
 
-" coc CoC config
-nnoremap <leader>gd <Plug>(coc-definition)
-nnoremap <leader>gr <Plug>(coc-references)
+" CoC config
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gr <Plug>(coc-references)
 
 " fzf config
 " fuzzy finder in git repo
