@@ -64,6 +64,7 @@ Plug 'neoclide/jsonc.vim'
 
 " LSP stuff
 Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
 
 call plug#end()
 
@@ -87,7 +88,12 @@ let g:airline_powerline_fonts = 1
 
 " LSP CONFIG STARTS HERE 
 " tsserver https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#tsserver
-lua require'lspconfig'.tsserver.setup{ }
+" from ThePrimeagen https://youtu.be/tOjVHXaUrzo?t=281
+" adjust one menu and no magic select
+set completeopt=menuone,noinsert,noselect
+let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
+
+lua require'lspconfig'.tsserver.setup{ on_attach=require'completion'.on_attach }
 
 " LSP CONFIG ENDS HERE 
 
