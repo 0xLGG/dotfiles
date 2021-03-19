@@ -67,6 +67,7 @@ Plug 'neovim/nvim-lspconfig'
 
 call plug#end()
 
+
 " a very awesome looking theme! 
 " might be a little to dark on the relative numbers and such 
 " but already 100 times better then defaults
@@ -84,7 +85,13 @@ let g:v_autofmt_bufwritepre = 1
 let g:airline_theme='dark'
 let g:airline_powerline_fonts = 1
 
-" REMAP REMAPS START HERE
+" LSP CONFIG STARTS HERE 
+" tsserver https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#tsserver
+lua require'lspconfig'.tsserver.setup{ }
+
+" LSP CONFIG ENDS HERE 
+
+" REMAP REMAPS STARTS HERE
 " defining the leader key, here space
 let mapleader = " "
 " n -> the mode here normal
