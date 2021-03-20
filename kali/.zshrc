@@ -196,11 +196,9 @@ EDITOR=vim
 xset b off # turn off beeps https://unix.stackexchange.com/questions/214607/how-to-disable-beep-tone-in-xfce-when-the-delete-button-is-pressed
 # setxkbmap -option ctrl:swapcaps # for tmux shortcut
 
-DISP() {
-    xrandr --newmode "3440x1440_60.00"  419.11  3440 3688 4064 4688  1440 1441 1444 1490  -HSync +Vsync
-    xrandr --addmode Virtual1 "3440x1440_60.00" # instead of Virtual1 see what displays are displayed in xrandr -q
-    xrandr --output Virtual1 --mode "3440x1440_60.00"
-}
+# load custom scripts
+# https://stackoverflow.com/a/1423444
+for f in ~/dotfiles/scripts/bash/*.sh; do source $f; done
 
 VPN_THM() {
     sudo killall opnvpn
@@ -224,13 +222,6 @@ alias tmp='cd $(mktemp -d)'
 alias ls="lsd"
 alias ip="ip -c=always"
 alias xclip="xclip -sel clip"
-
-## save victim IP for CTF
-VIP() { echo "$1" > /tmp/vip; export VIP=$(cat /tmp/vip);}
-if [ -f /tmp/vip ]; then
-	  export VIP=$(cat /tmp/vip);
-fi 
-
 
 alias scan='if ! [ -d ./nmap ]; then mkdir nmap; echo "**** Directory to save nmap scan created (nmap)****";echo "Starting scan with sudo nmap -p- -sC -sS -sV -oA nmap/inital -vv"; fi;sudo nmap -p- -sC -sS -sV -oA nmap/inital -vv'
 alias getip='ip a | grep tun0 | grep "inet .*/" | grep -oP "(\d+\.){3}\d+" | xclip'
