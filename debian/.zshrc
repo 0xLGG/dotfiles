@@ -77,12 +77,17 @@ if ! zgen saved; then
   zgen save
 fi
 
+# for vim
 alias vim=nvim
 alias vi=nvim
 
 # for tmux
 export TERM=xterm-256color
 export EDITOR=vim
+
+# load custom scripts
+# https://stackoverflow.com/a/1423444
+for f in ~/dotfiles/scripts/bash/*.sh; do source $f; done
 
 # at the end enter our home
 cd ~
