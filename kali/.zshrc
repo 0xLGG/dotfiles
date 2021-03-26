@@ -236,6 +236,7 @@ fi
 export PATH=/home/kali/dotfiles/opnvpn/thm:$PATH
 export PATH=/home/kali/repos/dotfiles/rwxrob/common/lynx:$PATH
 export PATH=/home/kali/dotfiles/scripts:$PATH
+export PATH=/home/kali/.local/bin:$PATH
 
 # enable command-not-found if installed
 if [ -f /etc/zsh_command_not_found ]; then
