@@ -201,7 +201,7 @@ xset b off # turn off beeps https://unix.stackexchange.com/questions/214607/how-
 for f in ~/dotfiles/scripts/bash/*.sh; do source $f; done
 
 VPN_THM() {
-    sudo killall opnvpn
+    sudo killall openvpn
     opnvpn-thm
 }
 
