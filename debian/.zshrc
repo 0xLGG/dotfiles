@@ -89,6 +89,9 @@ export EDITOR=vim
 # https://stackoverflow.com/a/1423444
 for f in ~/dotfiles/scripts/bash/*.sh; do source $f; done
 
+JOKE () {
+    curl https://icanhazdadjoke.com
+}
 # at the end enter our home
 cd ~
 # and start the tmux
