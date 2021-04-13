@@ -30,12 +30,12 @@ if ! zgen saved; then
   # specify plugins here
   zgen oh-my-zsh
 
+  zgen oh-my-zsh plugins/archlinux
   zgen oh-my-zsh plugins/autojump
   zgen oh-my-zsh plugins/alias-finder
   zgen oh-my-zsh plugins/command-not-found
   zgen oh-my-zsh plugins/composer
   zgen oh-my-zsh plugins/cp
-  zgen oh-my-zsh plugins/debian
   zgen oh-my-zsh plugins/docker-compose
   zgen oh-my-zsh plugins/docker-machine
   zgen oh-my-zsh plugins/docker
@@ -50,6 +50,7 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/gitfast
   zgen oh-my-zsh plugins/github
   zgen oh-my-zsh plugins/gitignore
+  zgen oh-my-zsh plugins/golang
   zgen oh-my-zsh plugins/gpg-agent
   zgen oh-my-zsh plugins/jsontools
   zgen oh-my-zsh plugins/jump
