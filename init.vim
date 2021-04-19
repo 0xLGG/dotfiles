@@ -28,6 +28,10 @@ set number
 " will make a buffer modifiable
 set modifiable
 
+
+" https://stackoverflow.com/a/4631956 encountered when editing a .csv
+set binary
+
 " some people like Vim to always change to the current file's directory
 " set autochdir
 
