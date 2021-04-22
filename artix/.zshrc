@@ -14,7 +14,7 @@ unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/lgg/.zshrc'
+zstyle :compinstall filename "${HOME}/.zshrc"
 
 autoload -Uz compinit
 compinit
@@ -34,7 +34,7 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/autojump
   zgen oh-my-zsh plugins/alias-finder
   zgen oh-my-zsh plugins/command-not-found
-  zgen oh-my-zsh plugins/composer
+  # zgen oh-my-zsh plugins/composer
   zgen oh-my-zsh plugins/cp
   zgen oh-my-zsh plugins/docker-compose
   zgen oh-my-zsh plugins/docker-machine
@@ -42,7 +42,7 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/dotenv
   zgen oh-my-zsh plugins/emoji
   zgen oh-my-zsh plugins/fzf
-  zgen oh-my-zsh plugins/gem
+  # zgen oh-my-zsh plugins/gem
   zgen oh-my-zsh plugins/git
   zgen oh-my-zsh plugins/git-auto-fetch
   zgen oh-my-zsh plugins/git-lfs
@@ -54,7 +54,7 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/gpg-agent
   zgen oh-my-zsh plugins/jsontools
   zgen oh-my-zsh plugins/jump
-  zgen oh-my-zsh plugins/laravel
+  # zgen oh-my-zsh plugins/laravel
   zgen oh-my-zsh plugins/lxd
   zgen oh-my-zsh plugins/nmap
   zgen oh-my-zsh plugins/node
@@ -65,10 +65,10 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/pipenv
   zgen oh-my-zsh plugins/pyenv
   zgen oh-my-zsh plugins/python
-  zgen oh-my-zsh plugins/rust
+  # zgen oh-my-zsh plugins/rust
   zgen oh-my-zsh plugins/sudo
   zgen oh-my-zsh plugins/tmux
-  zgen oh-my-zsh plugins/torrent
+  # zgen oh-my-zsh plugins/torrent
   zgen oh-my-zsh plugins/vi-mode
   zgen oh-my-zsh plugins/vim-interaction
   zgen oh-my-zsh plugins/yarn
