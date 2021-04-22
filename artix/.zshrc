@@ -59,7 +59,7 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/nmap
   zgen oh-my-zsh plugins/node
   zgen oh-my-zsh plugins/npm
-  zgen oh-my-zsh plugins/npx
+  # zgen oh-my-zsh plugins/npx
   zgen oh-my-zsh plugins/nvm
   zgen oh-my-zsh plugins/pip
   zgen oh-my-zsh plugins/pipenv
