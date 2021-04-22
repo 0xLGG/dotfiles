@@ -114,3 +114,12 @@ cd ~
 
 # this solves an nvm issue https://aur.archlinux.org/packages/nvm/#pinned-764001
 source /usr/share/nvm/init-nvm.sh
+
+alias ils='logo-ls'
+alias ila='logo-ls -A'
+alias ill='logo-ls -al'
+# equivalents with Git Status on by Default
+alias ilsg='logo-ls -D'
+alias ilag='logo-ls -AD'
+alias illg='logo-ls -alD'
+
