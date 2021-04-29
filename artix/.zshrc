@@ -123,3 +123,8 @@ alias ilsg='logo-ls -D'
 alias ilag='logo-ls -AD'
 alias illg='logo-ls -alD'
 
+# for st from siduck76
+# https://github.com/siduck76/st#how-to-apply-xresources-and-live-reload-
+# command : use Xresourcesfile && load
+alias load="kill -USR1 $(pidof st)"
+alias  use="xrdb merge"
