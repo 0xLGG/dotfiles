@@ -520,7 +520,7 @@ globalkeys = mytable.join(
     -- alternatively use rofi, a dmenu-like application with more features
     -- check https://github.com/DaveDavenport/rofi for more details
     -- rofi
-    awful.key({ modkey }, "p", function ()
+    awful.key({ modkey }, "i", function ()
             os.execute(string.format("rofi -show %s -theme %s",
             'window', 'nord'))
         end,
@@ -531,6 +531,15 @@ globalkeys = mytable.join(
             'run', 'nord'))
         end,
         {description = "rofi run", group = "launcher"}),
+
+
+    -- other custom
+    -- screenshot
+    awful.key({ modkey }, "p", function ()
+            os.execute("maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png")
+        end,
+        {description = "screenshot to clipboard", group = "hotkeys"}),
+
     -- awful.key({ modkey }, "r", function () awful.screen.focused().mypromptbox:run() end,
     --           {description = "run prompt", group = "launcher"}),
 
