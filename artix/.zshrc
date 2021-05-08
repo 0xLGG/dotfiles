@@ -91,7 +91,7 @@ fi
 
 # for tmux
 export TERM=xterm-256color
-export EDITOR=vim
+export EDITOR=nvim
 
 # load custom scripts
 # https://stackoverflow.com/a/1423444
@@ -105,6 +105,7 @@ export NVM_DIR="$HOME/.config/nvm"
 # PATH enhancing
 export PATH=$HOME/.config/nvcode/utils/bin:$PATH
 export PATH=/home/$USER/.config/nvcode/utils/bin:$PATH
+export PATH=/home/$USER/bin:$PATH
 
 # at the end enter our home
 cd ~
