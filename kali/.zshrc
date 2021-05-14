@@ -191,6 +191,7 @@ alias t-pserv='cd ~/repos && pserv'
 alias cht='curl cht.sh/'
 alias vim=nvim
 alias vm=nvim
+alias g=git
 wthr() { curl wttr.in/"$1" }
 EDITOR=vim
 xset b off # turn off beeps https://unix.stackexchange.com/questions/214607/how-to-disable-beep-tone-in-xfce-when-the-delete-button-is-pressed
@@ -233,10 +234,10 @@ if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#999'
 fi
 
-export PATH=/home/kali/dotfiles/opnvpn/thm:$PATH
-export PATH=/home/kali/repos/dotfiles/rwxrob/common/lynx:$PATH
-export PATH=/home/kali/dotfiles/scripts:$PATH
-export PATH=/home/kali/.local/bin:$PATH
+export PATH=$HOME/dotfiles/opnvpn/thm:$PATH
+export PATH=$HOME/repos/dotfiles/rwxrob/common/lynx:$PATH
+export PATH=$HOME/dotfiles/scripts:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 # enable command-not-found if installed
 if [ -f /etc/zsh_command_not_found ]; then
