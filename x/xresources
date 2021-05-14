@@ -5,13 +5,13 @@ Xft.autohint:	0
 Xft.hintstyle:	hintslight
 Xft.rgba:	rgb
 Xft.lcdfilter:	lcddefault
-Xft.dpi:   135
+Xft.dpi:   115
 
 st.font:         JetBrainsMono Nerd Font:style:medium:pixelsize=20
 
 ! window border inner
 st.opacity: 255
-st.borderpx: 10
+st.borderpx: 0
 
 ! Base16 OneDark
 ! Scheme: Lalit Magant (http://github.com/tilal6991)
