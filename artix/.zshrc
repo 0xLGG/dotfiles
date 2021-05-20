@@ -70,7 +70,7 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/tmux
   # zgen oh-my-zsh plugins/torrent
   zgen oh-my-zsh plugins/vi-mode
-  zgen oh-my-zsh plugins/vim-interaction
+  # zgen oh-my-zsh plugins/vim-interaction
   zgen oh-my-zsh plugins/yarn
   zgen oh-my-zsh plugins/zsh-interactive-cd
   zgen oh-my-zsh plugins/zsh-navigation-tools
@@ -128,4 +128,4 @@ alias illg='logo-ls -alD'
 # https://github.com/siduck76/st#how-to-apply-xresources-and-live-reload-
 # command : use Xresourcesfile && load
 alias load="kill -USR1 $(pidof st)"
-alias  use="xrdb merge"
+alias use="xrdb merge"
