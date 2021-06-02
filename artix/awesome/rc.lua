@@ -536,9 +536,14 @@ globalkeys = mytable.join(
     -- other custom
     -- screenshot
     awful.key({ modkey }, "p", function ()
-            os.execute("maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png")
+            os.execute("maim -i $(xdotool getactivewindow) | tee ~/Pictures/ss/$(date -u +'%Y-%m-%dT%H_%M_%SZ').png | xclip -selection clipboard -t image/png")
         end,
-        {description = "screenshot to clipboard", group = "hotkeys"}),
+        {description = "active window screenshot to clipboard", group = "hotkeys"}),
+
+    awful.key({ modkey }, "o", function ()
+            os.execute("maim --select | tee ~/Pictures/ss/$(date -u +'%Y-%m-%dT%H_%M_%SZ').png | xclip -selection clipboard -t image/png")
+        end,
+        {description = "select area screenshot to clipboard", group = "hotkeys"}),
 
     -- awful.key({ modkey }, "r", function () awful.screen.focused().mypromptbox:run() end,
     --           {description = "run prompt", group = "launcher"}),
