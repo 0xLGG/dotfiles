@@ -95,7 +95,7 @@ export EDITOR=nvim
 
 # load custom scripts
 # https://stackoverflow.com/a/1423444
-for f in ~/dotfiles/scripts/bash/*.sh; do source $f; done
+for f in ~/dotfiles/scripts/sh/*.sh; do source $f; done
 
 # nvm stuff
 export NVM_DIR="$HOME/.config/nvm"
@@ -129,7 +129,3 @@ alias illg='logo-ls -alD'
 # command : use Xresourcesfile && load
 alias load="kill -USR1 $(pidof st)"
 alias use="xrdb merge"
-
-# load custom scripts
-# https://stackoverflow.com/a/1423444
-for f in ~/dotfiles/scripts/sh/*.sh; do source $f; done
