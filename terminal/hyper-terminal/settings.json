@@ -23,8 +23,8 @@
       // Put settings here that you want to apply to all profiles.
       "fontFace": "Cascadia Code PL",
       "fontSize": 14,
-      "useAcrylic": false,
-      "acrylicOpacity": 0.8
+      "useAcrylic": true,
+      "acrylicOpacity": 0.6
     },
     "list": [
       {
