@@ -808,6 +808,14 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
+-- Rounding Corners. Took "focus" instead of "manage" since otherwhise fails with background for some reason?
+-- https://www.reddit.com/r/awesomewm/comments/61s020/round_corners_for_every_client/dfgt9hx?utm_source=share&utm_medium=web2x&context=3
+client.connect_signal("focus", function (c)
+    c.shape = function(cr,w,h)
+        gears.shape.rounded_rect(cr,w,h,5)
+    end
+end)
+
 -- }}}
 
 -- Autorun programs
