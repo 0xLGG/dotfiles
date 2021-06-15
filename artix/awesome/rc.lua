@@ -99,13 +99,13 @@ local chosen_theme = themes[7]
 local modkey       = "Mod4"
 local altkey       = "Mod1"
 local terminal     = "st"
-local vi_focus     = false -- vi-like client focus https://github.com/lcpz/awesome-copycats/issues/275
+local vi_focus     = true -- vi-like client focus https://github.com/lcpz/awesome-copycats/issues/275
 local cycle_prev   = true  -- cycle with only the previously focused client or all https://github.com/lcpz/awesome-copycats/issues/274
 local editor       = os.getenv("EDITOR") or "nvim"
 local browser      = "brave"
 
 awful.util.terminal = terminal
-awful.util.tagnames = { "1", "2", "3", "4", "5" }
+awful.util.tagnames = { "db", "b", "pi", "4", "5"  }
 awful.layout.layouts = {
     awful.layout.suit.floating,
     awful.layout.suit.tile,

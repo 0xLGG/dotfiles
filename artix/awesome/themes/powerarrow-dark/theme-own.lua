@@ -188,12 +188,12 @@ local cpu = lain.widget.cpu({
 })
 
 -- Coretemp
-local tempicon = wibox.widget.imagebox(theme.widget_temp)
-local temp = lain.widget.temp({
-    settings = function()
-        widget:set_markup(markup.font(theme.font, " " .. coretemp_now .. "°C "))
-    end
-})
+-- local tempicon = wibox.widget.imagebox(theme.widget_temp)
+-- local temp = lain.widget.temp({
+--     settings = function()
+--         widget:set_markup(markup.font(theme.font, " " .. coretemp_now .. "°C "))
+--     end
+-- })
 
 -- / fs
 local fsicon = wibox.widget.imagebox(theme.widget_hdd)
@@ -300,7 +300,7 @@ function theme.at_screen_connect(s)
     s.mytaglist = awful.widget.taglist(s, awful.widget.taglist.filter.all, awful.util.taglist_buttons)
 
     -- Create a tasklist widget
-    s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, awful.util.tasklist_buttons)
+    -- s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, awful.util.tasklist_buttons)
 
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(18), bg = theme.bg_normal, fg = theme.fg_normal })
