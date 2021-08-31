@@ -1,7 +1,7 @@
 # config dotfiles scripts and all the other fun stuff
 
 ## stuff to use
-- [Termina](https://github.com/siduck76/st) An `st` improvement. The installation might be tricky. I had to checkout the project in ~/st. Needed to run `sudo make clean` and `sudo make uninstall` and somehow even manually remove another `src/st` or `st` folder inside the repo. After some final `sudo make install` it *MAGICALLY* worked...
+- [Terminal](https://github.com/siduck76/st) An `st` improvement. The installation might be tricky. I had to checkout the project in ~/st. Needed to run `sudo make clean` and `sudo make uninstall` and somehow even manually remove another `src/st` or `st` folder inside the repo. After some final `sudo make install` it *MAGICALLY* worked...
 - [ls-icons](https://github.com/Yash-Handa/logo-ls)
 Full of bugs. Use at your own risk. Better not to touch anything here!
 - awesome themes from [here](https://github.com/lcpz/awesome-copycats)
