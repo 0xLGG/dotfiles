@@ -108,6 +108,7 @@ export PATH=/home/$USER/.config/nvcode/utils/bin:$PATH
 export PATH=/home/$USER/bin:$PATH
 export PATH=$HOME/.local/share/solana/install/active_release/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 # at the end enter our home
 cd ~
