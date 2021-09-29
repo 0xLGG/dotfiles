@@ -10,10 +10,13 @@ if not defined FOO (
 :: copy to other disk
 :: https://stackoverflow.com/a/203116
 For /f "tokens=2-4 delims=/ " %%a in ('date /t') do (set mydate=%%c-%%a-%%b)
-For /f "tokens=1-2 delims=/:" %%a in ("%TIME%") do (set mytime=%%a%%b)
-echo %mydate%_%mytime%
-mkdir F:\vm\%mydate%_%mytime%
-xcopy D:\vm\ F:\vm\%mydate%_%mytime%\ /E/H
+::For /f "tokens=1-2 delims=/:" %%a in ("%TIME%") do (set mytime=%%b%%a)
+::echo %mydate%_%mytime%
+::mkdir F:\vm\%mydate%_%mytime%
+mkdir F:\vm\%mydate%
+::xcopy D:\vm\ F:\vm\%mydate%_%mytime%\ /E/H
+xcopy D:\vm\ F:\vm\%mydate%\ /E/H
+
 
 :: cleanup - keep only last MAXBACKUPS recent backups
 :: https://stackoverflow.com/questions/28466638/batch-script-to-delete-oldest-folder-in-a-given-folder
