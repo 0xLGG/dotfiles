@@ -426,9 +426,9 @@ selection:
 #  args:
 #    - --login
 shell:
-    program: /usr/bin/tmux
-    args:
-      - -u # force UTF-8 in tmux
+    program: /usr/bin/zsh
+      # args:
+      #      - -u # force UTF-8 in tmux
 
 # Startup directory
 #
