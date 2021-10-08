@@ -31,7 +31,7 @@ if ! zgen saved; then
   # specify plugins here
   zgen oh-my-zsh
 
-  zgen oh-my-zsh plugins/archlinux
+  # zgen oh-my-zsh plugins/archlinux
   zgen oh-my-zsh plugins/autojump
   zgen oh-my-zsh plugins/alias-finder
   zgen oh-my-zsh plugins/command-not-found
@@ -71,7 +71,7 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/tmux
   # zgen oh-my-zsh plugins/torrent
   zgen oh-my-zsh plugins/vi-mode
-  zgen oh-my-zsh plugins/vim-interaction
+  # zgen oh-my-zsh plugins/vim-interaction
   zgen oh-my-zsh plugins/yarn
   zgen oh-my-zsh plugins/zsh-interactive-cd
   zgen oh-my-zsh plugins/zsh-navigation-tools
