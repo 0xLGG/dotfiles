@@ -105,14 +105,26 @@ export PATH=$HOME/.local/bin:$PATH
 export N_PREFIX=$HOME/.n
 export PATH=$N_PREFIX/bin:$PATH
 
+alias l='exa'
+alias la='exa -a'
+alias ll='exa -lah'
+alias ls='exa --color=auto'
+
 alias ils='logo-ls'
 alias ila='logo-ls -A'
 alias ill='logo-ls -al'
+
 # equivalents with Git Status on by Default
 alias ilsg='logo-ls -D'
 alias ilag='logo-ls -AD'
 alias illg='logo-ls -alD'
 
+alias fd='fdfind'
+
+# no line numers, better for yanking
+alias bat='batcat --style=plain'
+# includes line numbers
+alias bbat='batcat'
 # at the end enter our home
 cd ~
 
