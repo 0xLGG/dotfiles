@@ -61,7 +61,7 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/node
   zgen oh-my-zsh plugins/npm
   # zgen oh-my-zsh plugins/npx
-  zgen oh-my-zsh plugins/nvm
+  # zgen oh-my-zsh plugins/nvm
   zgen oh-my-zsh plugins/pip
   zgen oh-my-zsh plugins/pipenv
   zgen oh-my-zsh plugins/pyenv
@@ -71,7 +71,7 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/tmux
   # zgen oh-my-zsh plugins/torrent
   zgen oh-my-zsh plugins/vi-mode
-  # zgen oh-my-zsh plugins/vim-interaction
+  zgen oh-my-zsh plugins/vim-interaction
   zgen oh-my-zsh plugins/yarn
   zgen oh-my-zsh plugins/zsh-interactive-cd
   zgen oh-my-zsh plugins/zsh-navigation-tools
