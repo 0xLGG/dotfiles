@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Ledger Live
+Exec=/home/lgg/.local/bin/ledger %u
+Type=Application
+Categories=Finance; 
+Terminal=false
+MimeType=x-scheme-handler/ledgerlive;
