@@ -66,7 +66,7 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/pipenv
   zgen oh-my-zsh plugins/pyenv
   zgen oh-my-zsh plugins/python
-  # zgen oh-my-zsh plugins/rust
+  zgen oh-my-zsh plugins/rust
   zgen oh-my-zsh plugins/sudo
   zgen oh-my-zsh plugins/tmux
   # zgen oh-my-zsh plugins/torrent
@@ -104,6 +104,14 @@ export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export N_PREFIX=$HOME/.n
 export PATH=$N_PREFIX/bin:$PATH
+
+# export OPENSSL_DIR=/usr/bin/openssl
+# https://github.com/sfackler/rust-openssl/issues/766#issuecomment-615128100
+# export OPENSSL_LIB_DIR="/usr/lib/x86_64-linux-gnu"
+# export OPENSSL_INCLUDE_DIR="/usr/include/openssl"
+
+export LLVMENV_RUST_BINDING=1
+source <(llvmenv zsh)
 
 alias l='exa'
 alias la='exa -a'
