@@ -12,4 +12,9 @@ package.loaded['onedarker.LSP'] = nil
 require("onedarker")
 
 EOF
+
+" custom adjustemnts here since not knowing any better solution
+" transparency when using LunarVim
 hi Normal guibg=NONE ctermbg=NONE
+" setting relative numbers
+set rnu
