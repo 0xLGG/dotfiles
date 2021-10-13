@@ -2,12 +2,12 @@
   "settingsVersion": "1.67",
   "exclusionRules": [
     {
-      "pattern": "https?://mail.google.com/*",
-      "passKeys": ""
-    },
-    {
       "pattern": "https?://scan.pulsechain.com/*",
       "passKeys": "/"
+    },
+    {
+      "pattern": "https?://github.com/*",
+      "passKeys": "t"
     }
   ],
   "filterLinkHints": false,
