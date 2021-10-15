@@ -16,5 +16,18 @@ EOF
 " custom adjustemnts here since not knowing any better solution
 " transparency when using LunarVim
 hi Normal guibg=NONE ctermbg=NONE
+
 " setting relative numbers
 set rnu
+
+" how to paste overwithout overwrting register
+" https://stackoverflow.com/a/7700319/6138965
+function! RestoreRegister()
+    let @" = s:restore_reg
+    return ''
+endfunction
+function! s:Repl()
+    let s:restore_reg = @"
+    return "p@=RestoreRegister()\<cr>"
+endfunction
+vnoremap <silent> <expr> p <sid>Repl()
