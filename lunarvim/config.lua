@@ -110,7 +110,8 @@ lvim.plugins = {
 
    run = "./install.sh",
    requires = "hrsh7th/nvim-cmp",
-  }
+  },
+  {"https://github.com/github/copilot.vim"}
 
 --     {"folke/tokyonight.nvim"}, {
 --         "ray-x/lsp_signature.nvim",
@@ -125,6 +126,7 @@ lvim.plugins = {
 -- }
 
 
+-- For solidity
 -- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#solang
 require'lspconfig'.solang.setup{
     cmd = { "solang", "--language-server" },
