@@ -133,6 +133,8 @@ alias fd='fdfind'
 alias bat='batcat --style=plain'
 # includes line numbers
 alias bbat='batcat'
+
+alias lv='lvim'
 # at the end enter our home
 cd ~
 
