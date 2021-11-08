@@ -375,7 +375,7 @@ tmux_conf_update_plugins_on_reload=true
 # set -g @plugin 'tmux-plugins/tmux-copycat'
 set -g @plugin 'tmux-plugins/tmux-cpu'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
-# set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'tmux-plugins/tmux-continuum'
 set -g @continuum-restore 'on'
 # not working ...
 # set -g @plugin 'tmux-plugins/tmux-fpp'
@@ -413,5 +413,8 @@ set -g @continuum-restore 'on'
 # custom begin
 #
 # https://github.com/tmux-plugins/tmux-resurrect/blob/master/docs/restoring_vim_and_neovim_sessions.md
+# for vim
+set -g @resurrect-strategy-vim 'session'
+# for neovim
 set -g @resurrect-strategy-nvim 'session'
-
+set -g @resurrect-capture-pane-contents 'on'
