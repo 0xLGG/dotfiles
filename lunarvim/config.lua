@@ -134,3 +134,20 @@ require'lspconfig'.solang.setup{
     filetypes = { "solidity" },
     root_dir = require("lspconfig").util.root_pattern(".git"),
 }
+
+lvim.lsp.automatic_servers_installation = true
+
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+  {
+    exe = "prettier",
+    filetypes = { "javascript", "typescript", "typescriptreact", "css", "markdown", "json", "html" },
+  },
+}
+-- local linters = require "lvim.lsp.null-ls.linters"
+-- linters.setup {
+--   {
+--     exe = "eslint",
+--     filetypes = { "javascript", "typescript", "typescriptreact" },
+--   },
+-- }
