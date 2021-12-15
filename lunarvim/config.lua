@@ -151,3 +151,7 @@ formatters.setup {
 --     filetypes = { "javascript", "typescript", "typescriptreact" },
 --   },
 -- }
+
+local map = vim.api.nvim_set_keymap
+-- toggle numbers on side. improving yanking while visual selection active in tmux without selecting numbbers
+map('n','<C-n>', ':set nu!<cr>:set rnu!<cr>', {noremap = true})
