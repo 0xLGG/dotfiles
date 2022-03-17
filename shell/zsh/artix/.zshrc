@@ -132,3 +132,4 @@ alias illg='logo-ls -alD'
 # command : use Xresourcesfile && load
 alias load="kill -USR1 $(pidof st)"
 alias use="xrdb merge"
+alias lv=lvim
