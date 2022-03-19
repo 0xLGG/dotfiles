@@ -94,7 +94,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 
 -- Additional Plugins
 lvim.plugins = {
-  {"ChristianChiarulli/vim-solidity"},
+  {"tomlion/vim-solidity"},
   -- {
   --  "tzachar/cmp-tabnine",
   --  config = function ()
