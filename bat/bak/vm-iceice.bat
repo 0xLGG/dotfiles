@@ -12,10 +12,10 @@ if not defined FOO (
 For /f "tokens=2-4 delims=/ " %%a in ('date /t') do (set mydate=%%c-%%a-%%b)
 ::For /f "tokens=1-2 delims=/:" %%a in ("%TIME%") do (set mytime=%%b%%a)
 ::echo %mydate%_%mytime%
-::mkdir F:\vm\%mydate%_%mytime%
-mkdir F:\vm\%mydate%
-::xcopy D:\vm\ F:\vm\%mydate%_%mytime%\ /E/H
-xcopy D:\vm\ F:\vm\%mydate%\ /E/H
+::mkdir D:\vm\%mydate%_%mytime%
+mkdir E:\vm\%mydate%
+::xcopy D:\vm\ D:\vm\%mydate%_%mytime%\ /E/H
+xcopy D:\vm\ E:\vm\%mydate%\ /E/H
 
 
 :: cleanup - keep only last MAXBACKUPS recent backups
@@ -25,11 +25,11 @@ set "delMsg="
 :: Preserve only the %MAXBACKUPS% most recent backups.
 set "delMsg="
 for /f "skip=%MAXBACKUPS% delims=" %%a in (
-  'dir "F:\vm\*" /t:c /a:d /o:-d /b'
+  'dir "E:\vm\*" /t:c /a:d /o:-d /b'
 ) do (
   if not defined delMsg (
     set delMsg=1
     echo More than %MAXBACKUPS% found - only the %MAXBACKUPS% most recent folders will be preserved.
   )
-  rd /s /q "F:\vm\%%a"
+  rd /s /q "E:\vm\%%a"
 )
