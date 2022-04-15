@@ -126,3 +126,4 @@ alias illg='logo-ls -AD'
 alias load="kill -USR1 $(pidof st)"
 alias use="xrdb merge"
 alias lv=lvim
+alias gs="g status"
