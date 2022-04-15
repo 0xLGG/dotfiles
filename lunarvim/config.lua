@@ -20,37 +20,37 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = false
 -- edit a default keymapping
--- lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
+lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
 
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
 -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
--- local _, actions = pcall(require, "telescope.actions")
--- lvim.builtin.telescope.defaults.mappings = {
---   -- for input mode
---   i = {
---     ["<C-j>"] = actions.move_selection_next,
---     ["<C-k>"] = actions.move_selection_previous,
---     ["<C-n>"] = actions.cycle_history_next,
---     ["<C-p>"] = actions.cycle_history_prev,
---   },
---   -- for normal mode
---   n = {
---     ["<C-j>"] = actions.move_selection_next,
---     ["<C-k>"] = actions.move_selection_previous,
---   },
--- }
+local _, actions = pcall(require, "telescope.actions")
+lvim.builtin.telescope.defaults.mappings = {
+  --   -- for input mode
+  i = {
+    ["<C-j>"] = actions.move_selection_next,
+    ["<C-k>"] = actions.move_selection_previous,
+    ["<C-n>"] = actions.cycle_history_next,
+    ["<C-p>"] = actions.cycle_history_prev,
+  },
+  --   -- for normal mode
+  n = {
+    ["<C-j>"] = actions.move_selection_next,
+    ["<C-k>"] = actions.move_selection_previous,
+  },
+}
 
 -- Use which-key to add extra bindings with the leader-key prefix
--- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
--- lvim.builtin.which_key.mappings["t"] = {
---   name = "+Trouble",
---   r = { "<cmd>Trouble lsp_references<cr>", "References" },
---   f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
---   d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
---   q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
---   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
---   w = { "<cmd>Trouble workspace_diagnostics<cr>", "Wordspace Diagnostics" },
--- }
+lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
+lvim.builtin.which_key.mappings["t"] = {
+  name = "+Trouble",
+  r = { "<cmd>Trouble lsp_references<cr>", "References" },
+  f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
+  d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
+  q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
+  l = { "<cmd>Trouble loclist<cr>", "LocationList" },
+  w = { "<cmd>Trouble workspace_diagnostics<cr>", "Wordspace Diagnostics" },
+}
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
@@ -83,15 +83,19 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- generic LSP settings
 
 -- ---@usage disable automatic installation of servers
--- lvim.lsp.automatic_servers_installation = false
+lvim.lsp.automatic_servers_installation = true
 
--- ---@usage Select which servers should be configured manually. Requires `:LvimCacheReset` to take effect.
--- See the full default list `:lua print(vim.inspect(lvim.lsp.override))`
--- vim.list_extend(lvim.lsp.override, { "pyright" })
-
--- ---@usage setup a server -- see: https://www.lunarvim.org/languages/#overriding-the-default-configuration
+-- ---configure a server manually. !!Requires `:LvimCacheReset` to take effect!!
+-- ---see the full default list `:lua print(vim.inspect(lvim.lsp.automatic_configuration.skipped_servers))`
+-- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
 -- local opts = {} -- check the lspconfig documentation for a list of all possible options
--- require("lvim.lsp.manager").setup("pylsp", opts)
+-- require("lvim.lsp.manager").setup("pyright", opts)
+
+-- ---remove a server from the skipped list, e.g. eslint, or emmet_ls. !!Requires `:LvimCacheReset` to take effect!!
+-- ---`:LvimInfo` lists which server(s) are skiipped for the current filetype
+-- vim.tbl_map(function(server)
+--   return server ~= "emmet_ls"
+-- end, lvim.lsp.automatic_configuration.skipped_servers)
 
 -- -- you can set a custom on_attach function that will be used for all the language servers
 -- -- See <https://github.com/neovim/nvim-lspconfig#keybindings-and-completion>
@@ -119,6 +123,14 @@ lvim.builtin.treesitter.highlight.enabled = true
 --   },
 -- }
 
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+  {
+    exe = "prettier",
+    filetypes = { "javascript", "typescript", "typescriptreact", "css", "markdown", "json", "html" },
+  },
+}
+
 -- -- set additional linters
 -- local linters = require "lvim.lsp.null-ls.linters"
 -- linters.setup {
@@ -137,16 +149,69 @@ lvim.builtin.treesitter.highlight.enabled = true
 --   },
 -- }
 
--- Additional Plugins
--- lvim.plugins = {
---     {"folke/tokyonight.nvim"},
---     {
---       "folke/trouble.nvim",
---       cmd = "TroubleToggle",
---     },
+-- local linters = require "lvim.lsp.null-ls.linters"
+-- linters.setup {
+--   {
+--     exe = "eslint",
+--     filetypes = { "javascript", "typescript", "typescriptreact" },
+--   },
 -- }
+
+-- Additional Plugins
+lvim.plugins = {
+  --     {"folke/tokyonight.nvim"},
+  --     {
+  --       "folke/trouble.nvim",
+  --       cmd = "TroubleToggle",
+  --     },
+
+  { "tomlion/vim-solidity" },
+  -- {
+  --  "tzachar/cmp-tabnine",
+  --  config = function ()
+  --  local tabnine = require('cmp_tabnine.config')
+  --  tabnine:setup({
+  --       max_lines = 1000;
+  --       max_num_results = 20;
+  --       sort = true;
+  --   	  run_on_every_keystroke = true;
+  --      snippet_placeholder = '..';
+  --    })
+  -- end,
+
+  --  run = "./install.sh",
+  --  requires = "hrsh7th/nvim-cmp",
+  -- },
+  { "tpope/vim-fugitive" },
+  { "https://github.com/github/copilot.vim" },
+
+  --     {"folke/tokyonight.nvim"}, {
+  --         "ray-x/lsp_sign:hature.nvim",
+  --         config = function() require"lsp_signature".on_attach() end,
+  --         event = "InsertEnter"
+  --     }
+
+  -- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#solang
+  -- For solidity
+  require 'lspconfig'.solang.setup {
+    cmd = { "solang", "--language-server" },
+    filetypes = { "solidity" },
+    root_dir = require("lspconfig").util.root_pattern(".git"),
+  }
+}
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
 --   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
 -- }
+
+
+local map = vim.api.nvim_set_keymap
+-- toggle numbers on side. improving yanking while visual selection active in tmux without selecting numbbers
+map('n', '<C-n>', ':set nu!<cr>:set rnu!<cr>', { noremap = true })
+-- }
+
+-- vim.api.set_r
+--  local set rnu
+
+vim.api.nvim_command('set rnu')
