@@ -418,3 +418,4 @@ set -g @resurrect-strategy-vim 'session'
 # for neovim
 set -g @resurrect-strategy-nvim 'session'
 set -g @resurrect-capture-pane-contents 'on'
+set -g default-shell /bin/zsh
