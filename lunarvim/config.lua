@@ -184,7 +184,7 @@ lvim.plugins = {
   -- },
   { "tpope/vim-fugitive" },
   { "https://github.com/github/copilot.vim" },
-
+  { "c0r73x/vimdir.vim" },
   --     {"folke/tokyonight.nvim"}, {
   --         "ray-x/lsp_sign:hature.nvim",
   --         config = function() require"lsp_signature".on_attach() end,
