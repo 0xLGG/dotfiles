@@ -127,3 +127,5 @@ alias load="kill -USR1 $(pidof st)"
 alias use="xrdb merge"
 alias lv=lvim
 alias gs="g status"
+
+eval $(thefuck --alias)
