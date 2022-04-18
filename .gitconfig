@@ -22,7 +22,7 @@
 
 [merge]
     conflictstyle = diff3
-	tool = fugitive
+	  tool = fugitive
 
 [diff]
     colorMoved = default
