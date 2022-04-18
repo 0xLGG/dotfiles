@@ -22,6 +22,9 @@
 
 [merge]
     conflictstyle = diff3
+	tool = fugitive
 
 [diff]
     colorMoved = default
+[mergetool "fugitive"]
+	cmd = lv -f -c \"Gdiff\" \"$MERGED\"
