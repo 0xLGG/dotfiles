@@ -2,7 +2,7 @@ local M = {}
 
 M.config = function()
   lvim.builtin.which_key = {
-    ---@usage disable which-key completely [not recommeded]
+    ---@usage disable which-key completely [not recommended]
     active = true,
     on_config_done = nil,
     setup = {
@@ -64,33 +64,34 @@ M.config = function()
       ["/"] = { "<ESC><CMD>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>", "Comment" },
     },
     mappings = {
+      [";"] = { "<cmd>Alpha<CR>", "Dashboard" },
       ["w"] = { "<cmd>w!<CR>", "Save" },
       ["q"] = { "<cmd>q!<CR>", "Quit" },
       ["/"] = { "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", "Comment" },
-      ["c"] = { "<cmd>BufferClose!<CR>", "Close Buffer" },
-      ["f"] = { "<cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files prompt_prefix=🔍<CR>", "Find File" },
+      ["c"] = { "<cmd>BufferKill<CR>", "Close Buffer" },
+      ["f"] = { require("lvim.core.telescope.custom-finders").find_project_files, "Find File" },
       ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
       b = {
         name = "Buffers",
-        j = { "<cmd>BufferPick<cr>", "Jump" },
+        j = { "<cmd>BufferLinePick<cr>", "Jump" },
         f = { "<cmd>Telescope buffers<cr>", "Find" },
-        b = { "<cmd>b#<cr>", "Previous" },
-        w = { "<cmd>BufferWipeout<cr>", "Wipeout" },
+        b = { "<cmd>BufferLineCyclePrev<cr>", "Previous" },
+        -- w = { "<cmd>BufferWipeout<cr>", "Wipeout" }, -- TODO: implement this for bufferline
         e = {
-          "<cmd>BufferCloseAllButCurrent<cr>",
-          "Close all but current",
+          "<cmd>BufferLinePickClose<cr>",
+          "Pick which buffer to close",
         },
-        h = { "<cmd>BufferCloseBuffersLeft<cr>", "Close all to the left" },
+        h = { "<cmd>BufferLineCloseLeft<cr>", "Close all to the left" },
         l = {
-          "<cmd>BufferCloseBuffersRight<cr>",
+          "<cmd>BufferLineCloseRight<cr>",
           "Close all to the right",
         },
         D = {
-          "<cmd>BufferOrderByDirectory<cr>",
+          "<cmd>BufferLineSortByDirectory<cr>",
           "Sort by directory",
         },
         L = {
-          "<cmd>BufferOrderByLanguage<cr>",
+          "<cmd>BufferLineSortByExtension<cr>",
           "Sort by language",
         },
       },
@@ -140,23 +141,17 @@ M.config = function()
       l = {
         name = "LSP",
         a = { "<cmd>lua require('lvim.core.telescope').code_actions()<cr>", "Code Action" },
-        d = {
-          "<cmd>Telescope lsp_document_diagnostics<cr>",
-          "Document Diagnostics",
-        },
-        w = {
-          "<cmd>Telescope lsp_workspace_diagnostics<cr>",
-          "Workspace Diagnostics",
-        },
+        d = { "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Buffer Diagnostics" },
+        w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
         f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
         i = { "<cmd>LspInfo<cr>", "Info" },
         I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
         j = {
-          "<cmd>lua vim.lsp.diagnostic.goto_next({popup_opts = {border = lvim.lsp.popup_border}})<cr>",
+          "<cmd>lua vim.diagnostic.goto_next()<cr>",
           "Next Diagnostic",
         },
         k = {
-          "<cmd>lua vim.lsp.diagnostic.goto_prev({popup_opts = {border = lvim.lsp.popup_border}})<cr>",
+          "<cmd>lua vim.diagnostic.goto_prev()<cr>",
           "Prev Diagnostic",
         },
         l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
@@ -166,13 +161,14 @@ M.config = function()
           t = { "<cmd>lua require('lvim.lsp.peek').Peek('typeDefinition')<cr>", "Type Definition" },
           i = { "<cmd>lua require('lvim.lsp.peek').Peek('implementation')<cr>", "Implementation" },
         },
-        q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
+        q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
         r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
         s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
         S = {
           "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
           "Workspace Symbols",
         },
+        e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
       },
       L = {
         name = "+LunarVim",
@@ -188,7 +184,7 @@ M.config = function()
           "<cmd>lua require('lvim.core.telescope.custom-finders').grep_lunarvim_files()<cr>",
           "Grep LunarVim files",
         },
-        k = { "<cmd>lua require('lvim.keymappings').print()<cr>", "View LunarVim's default keymappings" },
+        k = { "<cmd>Telescope keymaps<cr>", "View LunarVim's keymappings" },
         i = {
           "<cmd>lua require('lvim.core.info').toggle_popup(vim.bo.filetype)<cr>",
           "Toggle LunarVim Info",
@@ -207,7 +203,10 @@ M.config = function()
             "<cmd>lua vim.fn.execute('edit ' .. require('lvim.core.log').get_path())<cr>",
             "Open the default logfile",
           },
-          l = { "<cmd>lua require('lvim.core.terminal').toggle_log_view(vim.lsp.get_log_path())<cr>", "view lsp log" },
+          l = {
+            "<cmd>lua require('lvim.core.terminal').toggle_log_view(vim.lsp.get_log_path())<cr>",
+            "view lsp log",
+          },
           L = { "<cmd>lua vim.fn.execute('edit ' .. vim.lsp.get_log_path())<cr>", "Open the LSP logfile" },
           n = {
             "<cmd>lua require('lvim.core.terminal').toggle_log_view(os.getenv('NVIM_LOG_FILE'))<cr>",
