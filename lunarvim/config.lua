@@ -215,3 +215,5 @@ map('n', '<C-n>', ':set nu!<cr>:set rnu!<cr>', { noremap = true })
 --  local set rnu
 
 vim.api.nvim_command('set rnu')
+-- https://www.reddit.com/r/neovim/comments/3v06lo/making_the_background_transparent/
+vim.api.nvim_command('au ColorScheme * hi Normal ctermbg=none guibg=none')
