@@ -105,6 +105,7 @@ export PATH=$HOME/.local/share/solana/install/active_release/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.npm-global/bin:$PATH
+export PATH=$HOME/go/bin:$PATH
 
 # at the end enter our home
 cd ~
