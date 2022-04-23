@@ -74,7 +74,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "tsx",
   "css",
   "rust",
-  "java",
+  -- "java",
   "yaml",
 }
 
@@ -187,6 +187,7 @@ lvim.plugins = {
   { "sbdchd/neoformat" },
   { "tpope/vim-fugitive" },
   { "https://github.com/github/copilot.vim" },
+  { "ThePrimeagen/refactoring.nvim" },
   { "c0r73x/vimdir.vim" },
   --     {"folke/tokyonight.nvim"}, {
   --         "ray-x/lsp_sign:hature.nvim",
@@ -230,3 +231,10 @@ vim.api.nvim_command('autocmd BufWritePre *.md Neoformat')
 vim.api.nvim_command('autocmd BufWritePre *.json Neoformat')
 vim.api.nvim_command('autocmd BufWritePre *.css Neoformat')
 vim.api.nvim_command('autocmd BufWritePre *.html Neoformat')
+
+-- refactor
+require('refactoring').setup({})
+-- load refactoring Telescope extension
+require("telescope").load_extension("refactoring")
+lvim.builtin.which_key.vmappings["r"] = { "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>", "Refactor" }
+lvim.builtin.which_key.mappings["r"] = { "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>", "Refactor" }
