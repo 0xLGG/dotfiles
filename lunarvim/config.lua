@@ -108,20 +108,21 @@ lvim.lsp.automatic_servers_installation = true
 -- end
 
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
--- local formatters = require "lvim.lsp.null-ls.formatters"
--- formatters.setup {
---   { command = "black", filetypes = { "python" } },
---   { command = "isort", filetypes = { "python" } },
---   {
---     -- each formatter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
---     command = "prettier",
---     ---@usage arguments to pass to the formatter
---     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
---     extra_args = { "--print-with", "100" },
---     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
---     filetypes = { "typescript", "typescriptreact" },
---   },
--- }
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+  --   { command = "black", filetypes = { "python" } },
+  --   { command = "isort", filetypes = { "python" } },
+  {
+    command = "prettier",
+    timeout = 1000,
+    --     -- each formatter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
+    --     ---@usage arguments to pass to the formatter
+    --     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
+    --     extra_args = { "--print-with", "100" },
+    --     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
+    filetypes = { "typescript", "typescriptreact" },
+  },
+}
 
 -- local formatters = require "lvim.lsp.null-ls.formatters"
 -- formatters.setup {
@@ -220,10 +221,10 @@ vim.api.nvim_command('au ColorScheme * hi Normal ctermbg=none guibg=none')
 -- Neoformat is part of prettier
 -- https://prettier.io/docs/en/vim.html#neoformathttpsgithubcomsbdchdneoformat
 vim.api.nvim_command('let g:neoformat_try_node_exe = 1')
-vim.api.nvim_command('autocmd BufWritePre *.js Neoformat')
-vim.api.nvim_command('autocmd BufWritePre *.jsx Neoformat')
-vim.api.nvim_command('autocmd BufWritePre *.ts Neoformat')
-vim.api.nvim_command('autocmd BufWritePre *.tsx Neoformat')
+vim.api.nvim_command('autocmd BufWritePre *.js* Neoformat')
+-- vim.api.nvim_command('autocmd BufWritePre *.jsx Neoformat')
+vim.api.nvim_command('autocmd BufWritePre *.ts* Neoformat')
+-- vim.api.nvim_command('autocmd BufWritePre *.tsx Neoformat')
 vim.api.nvim_command('autocmd BufWritePre *.md Neoformat')
 vim.api.nvim_command('autocmd BufWritePre *.json Neoformat')
 vim.api.nvim_command('autocmd BufWritePre *.css Neoformat')
