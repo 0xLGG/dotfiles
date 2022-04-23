@@ -123,13 +123,13 @@ lvim.lsp.automatic_servers_installation = true
 --   },
 -- }
 
-local formatters = require "lvim.lsp.null-ls.formatters"
-formatters.setup {
-  {
-    exe = "prettier",
-    filetypes = { "javascript", "typescript", "typescriptreact", "css", "markdown", "json", "html" },
-  },
-}
+-- local formatters = require "lvim.lsp.null-ls.formatters"
+-- formatters.setup {
+--   {
+--     exe = "prettier",
+--     filetypes = { "javascript", "typescript", "typescriptreact", "css", "markdown", "json", "html" },
+--   },
+-- }
 
 -- -- set additional linters
 -- local linters = require "lvim.lsp.null-ls.linters"
@@ -182,6 +182,7 @@ lvim.plugins = {
   --  run = "./install.sh",
   --  requires = "hrsh7th/nvim-cmp",
   -- },
+  { "sbdchd/neoformat" },
   { "tpope/vim-fugitive" },
   { "https://github.com/github/copilot.vim" },
   { "c0r73x/vimdir.vim" },
@@ -211,9 +212,19 @@ local map = vim.api.nvim_set_keymap
 map('n', '<C-n>', ':set nu!<cr>:set rnu!<cr>', { noremap = true })
 -- }
 
--- vim.api.set_r
 --  local set rnu
-
 vim.api.nvim_command('set rnu')
 -- https://www.reddit.com/r/neovim/comments/3v06lo/making_the_background_transparent/
 vim.api.nvim_command('au ColorScheme * hi Normal ctermbg=none guibg=none')
+
+-- Neoformat is part of prettier
+-- https://prettier.io/docs/en/vim.html#neoformathttpsgithubcomsbdchdneoformat
+vim.api.nvim_command('let g:neoformat_try_node_exe = 1')
+vim.api.nvim_command('autocmd BufWritePre *.js Neoformat')
+vim.api.nvim_command('autocmd BufWritePre *.jsx Neoformat')
+vim.api.nvim_command('autocmd BufWritePre *.ts Neoformat')
+vim.api.nvim_command('autocmd BufWritePre *.tsx Neoformat')
+vim.api.nvim_command('autocmd BufWritePre *.md Neoformat')
+vim.api.nvim_command('autocmd BufWritePre *.json Neoformat')
+vim.api.nvim_command('autocmd BufWritePre *.css Neoformat')
+vim.api.nvim_command('autocmd BufWritePre *.html Neoformat')
