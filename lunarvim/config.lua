@@ -149,13 +149,13 @@ formatters.setup {
 --   },
 -- }
 
--- local linters = require "lvim.lsp.null-ls.linters"
--- linters.setup {
---   {
---     exe = "eslint",
---     filetypes = { "javascript", "typescript", "typescriptreact" },
---   },
--- }
+local linters = require "lvim.lsp.null-ls.linters"
+linters.setup {
+  {
+    exe = "eslint",
+    filetypes = { "javascript", "typescript", "typescriptreact" },
+  },
+}
 
 -- Additional Plugins
 lvim.plugins = {
