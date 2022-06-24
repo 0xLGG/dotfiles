@@ -189,6 +189,7 @@ lvim.plugins = {
   { "https://github.com/github/copilot.vim" },
   { "ThePrimeagen/refactoring.nvim" },
   { "c0r73x/vimdir.vim" },
+  { "mg979/vim-visual-multi" },
   --     {"folke/tokyonight.nvim"}, {
   --         "ray-x/lsp_sign:hature.nvim",
   --         config = function() require"lsp_signature".on_attach() end,
