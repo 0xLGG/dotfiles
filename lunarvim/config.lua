@@ -231,6 +231,11 @@ vim.api.nvim_command('autocmd BufWritePre *.md Neoformat')
 vim.api.nvim_command('autocmd BufWritePre *.json Neoformat')
 vim.api.nvim_command('autocmd BufWritePre *.css Neoformat')
 vim.api.nvim_command('autocmd BufWritePre *.html Neoformat')
+-- https://github.com/mhinz/vim-galore#clipboard-usage-windows-macos
+-- If you don't even want to specify the * register all the time, put this in your vimrc:
+-- Usually all yank/delete/put operations fill the " register, now the * register is used for the same operations, therefore simply y and p will be enough.
+-- Let me repeat: Using the option above means that every yank/paste, even when only used in the same Vim window, will alter the clipboard. Decide for yourself if this is useful or not.
+vim.api.nvim_command('set clipboard=unnamed')
 
 -- refactor
 require('refactoring').setup({})
