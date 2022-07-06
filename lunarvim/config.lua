@@ -60,7 +60,6 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
-lvim.builtin.nvimtree.show_icons.git = 0
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -242,5 +241,7 @@ vim.api.nvim_command('set clipboard=unnamed')
 require('refactoring').setup({})
 -- load refactoring Telescope extension
 require("telescope").load_extension("refactoring")
-lvim.builtin.which_key.vmappings["r"] = { "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>", "Refactor" }
-lvim.builtin.which_key.mappings["r"] = { "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>", "Refactor" }
+lvim.builtin.which_key.vmappings["r"] = { "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>",
+  "Refactor" }
+lvim.builtin.which_key.mappings["r"] = { "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>",
+  "Refactor" }
