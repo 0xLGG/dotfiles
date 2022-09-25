@@ -133,3 +133,8 @@ alias gs="g status"
 alias gcm="g commit -m"
 
 eval $(thefuck --alias)
+
+# pnpm
+export PNPM_HOME="/home/lgg/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
